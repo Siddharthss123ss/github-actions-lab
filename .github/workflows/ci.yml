@@ -18,3 +18,9 @@ jobs:
 
       - name: Check Linux Version
         run: uname -a
+      
+      - name: Current Date
+        run: date
+
+      - name: Read Application File
+        run: cat app.txt
