@@ -1,0 +1,31 @@
+
+name: Linux System Information
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  builds:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Welcome
+        run: echo "Welcome to DevOps Training"
+
+      - name: Print Directory
+        run: pwd
+
+      - name: Linux Info
+        run: uname -a
+
+      - name: Date Info
+        run: date
+
+      - name: Print Content
+        run: cat app.txt
+
