@@ -1,0 +1,32 @@
+
+name: Advanced-CICD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build Application
+        run: echo "Building Application"
+
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Security Scan
+        run: echo "Running Security Scan"
+
+  deploy:
+    needs: [build, security]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy Application
+        run: echo "Deploy"
+
